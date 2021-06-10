@@ -44,6 +44,7 @@ dependencies {
     def lifecycle_version = "2.3.1"
     def koin_version = "2.1.6"
     def navigation_version = "2.3.5"
+    def okHttp_version = "4.9.0"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.5.0'
@@ -83,4 +84,7 @@ dependencies {
     //Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
     implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
+    //OkHTTP
+    implementation "com.squareup.okhttp3:okhttp:$okHttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okHttp_version"
 }
