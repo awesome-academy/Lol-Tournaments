@@ -1,7 +1,9 @@
 package com.sunasterisk.loltournaments
 
 import android.app.Application
+import com.sunasterisk.loltournaments.di.databaseModule
 import com.sunasterisk.loltournaments.di.networkModule
+import com.sunasterisk.loltournaments.di.sourceModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -10,7 +12,7 @@ class LolApplication: Application() {
         super.onCreate()
         startKoin {
             androidContext(this@LolApplication)
-            modules(listOf(networkModule))
+            modules(listOf(networkModule, databaseModule, sourceModule))
         }
     }
 }

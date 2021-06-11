@@ -1,4 +1,4 @@
-package com.sunasterisk.loltournaments.data.model
+package com.sunasterisk.loltournaments.data.model.remote
 
 import com.google.gson.annotations.SerializedName
 
