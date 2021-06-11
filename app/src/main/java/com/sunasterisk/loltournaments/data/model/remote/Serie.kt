@@ -1,8 +1,8 @@
-package com.sunasterisk.loltournaments.data.model
+package com.sunasterisk.loltournaments.data.model.remote
 
 import com.google.gson.annotations.SerializedName
 
-data class Tournament(
+data class Serie(
     @SerializedName("begin_at")
     val beginAt: String,
     @SerializedName("end_at")
@@ -11,16 +11,13 @@ data class Tournament(
     @SerializedName("league_id")
     val leagueId: Int,
     val league: League,
-    val matches: List<Match>,
     @SerializedName("full_name")
     val name: String,
-    @SerializedName("prizepool")
-    val prizePool: String,
-    @SerializedName("serie_id")
-    val serieId: Int,
-    val serie: Serie,
+    val season: String,
     val slug: String,
-    val teams: List<Team>,
+    val tier: String,
+    val tournaments: List<Tournament>,
     @SerializedName("winner_id")
     val winnerId: Int,
+    val year: Int
 )

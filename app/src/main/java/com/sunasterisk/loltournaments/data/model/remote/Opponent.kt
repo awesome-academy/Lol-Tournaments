@@ -1,4 +1,4 @@
-package com.sunasterisk.loltournaments.data.model
+package com.sunasterisk.loltournaments.data.model.remote
 
 data class Opponent(
     val opponent: Team,
