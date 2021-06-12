@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="serie"
+            type="com.sunasterisk.loltournaments.data.model.remote.Serie" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_114"
+        android:layout_margin="@dimen/dp_5"
+        app:cardCornerRadius="@dimen/dp_10">
+
+        <ImageView
+            android:id="@+id/imageSerie"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/serie_background_1" />
+
+        <TextView
+            android:id="@+id/textSerie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dp_5"
+            android:text="@{serie.name}"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dp_20"
+            android:textStyle="bold"
+            tools:text="@tools:sample/lorem" />
+
+    </androidx.cardview.widget.CardView>
+</layout>

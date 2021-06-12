@@ -26,6 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:mbn_backgroundBottomColor="@color/color_blumine"
-        app:mbn_defaultIconColor="@color/color_silver"
-        app:mbn_selectedIconColor="@android:color/white" />
+        app:mbn_defaultIconColor="@color/color_white_65"
+        app:mbn_selectedIconColor="@android:color/white"
+        app:mbn_shadowColor="@android:color/transparent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
