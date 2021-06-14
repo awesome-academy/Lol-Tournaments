@@ -6,7 +6,9 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
 
+    <color name="color_tory_blue">#105092</color>
+    <color name="color_tory_blue_50">#80105092</color>
     <color name="color_blumine">#1C5B7A</color>
     <color name="color_wild_sand">#F5F5F5</color>
-    <color name="color_silver">#C8C8C8</color>
+    <color name="color_white_65">#A6FFFFFF</color>
 </resources>
