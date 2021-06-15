@@ -26,10 +26,10 @@ abstract class BaseFragment<T : ViewDataBinding> : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initViews()
         initData()
-        initListeners()
+        initActions()
     }
 
     protected abstract fun initViews()
     protected abstract fun initData()
-    protected abstract fun initListeners()
+    protected abstract fun initActions()
 }

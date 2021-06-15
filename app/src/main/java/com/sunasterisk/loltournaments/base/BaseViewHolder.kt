@@ -3,7 +3,7 @@ package com.sunasterisk.loltournaments.base
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 
-class BaseViewHolder<T>(
+abstract class BaseViewHolder<T>(
     binding: ViewDataBinding,
     onItemClick: (T) -> Unit
 ) : RecyclerView.ViewHolder(binding.root) {

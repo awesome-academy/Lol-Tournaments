@@ -5,13 +5,13 @@ import androidx.recyclerview.widget.ListAdapter
 
 abstract class BaseAdapter<T, VH : BaseViewHolder<T>>(
     diffUtil: DiffUtil.ItemCallback<T>
-) : ListAdapter<T, VH>(diffUtil) {
+) : ListAdapter<T, VH>(diffUtil), SetDataAdapter<T> {
 
     override fun onBindViewHolder(holder: VH, position: Int) {
         holder.onBind(getItem(position))
     }
 
-    fun setData(data: List<T>) {
+    override fun setData(data: List<T>?) {
         submitList(data)
     }
 }
