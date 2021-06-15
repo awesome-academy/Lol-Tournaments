@@ -16,6 +16,7 @@
 
         <ImageView
             android:id="@+id/imageLeague"
+            loadImageUrl="@{league.imageUrl}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:padding="@dimen/dp_10"

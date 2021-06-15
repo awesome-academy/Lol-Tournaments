@@ -5,13 +5,17 @@
 
     <data>
 
+        <variable
+            name="serieViewModel"
+            type="com.sunasterisk.loltournaments.ui.home.HomeViewModel" />
     </data>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerSeriesCompleted"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:clipToPadding="false"
+        android:data="@{serieViewModel.serieCompleted}"
         android:paddingHorizontal="@dimen/dp_5"
         android:paddingTop="@dimen/dp_5"
         android:paddingBottom="@dimen/dp_50"
