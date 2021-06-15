@@ -13,5 +13,6 @@ abstract class BaseViewModel : ViewModel() {
 
     val exceptionHandler = CoroutineExceptionHandler { _, throwable ->
         _error.postValue(throwable.message)
+        _isLoading.postValue(false)
     }
 }
