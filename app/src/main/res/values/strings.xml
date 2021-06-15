@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">LoL Tournaments</string>
 
+    <string name="title_tournaments">Tournaments</string>
+    <string name="title_teams">Teams</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="title_more">More</string>
     <string name="title_completed">Completed</string>
     <string name="title_running">Running</string>
     <string name="title_upcoming">Upcoming</string>
