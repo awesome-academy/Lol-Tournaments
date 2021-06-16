@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="serieViewModel"
+            type="com.sunasterisk.loltournaments.ui.serie.SerieDetailsViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -30,13 +33,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    app:layout_collapseMode="pin"
-                    tools:src="@drawable/serie_background_1" />
+                    app:layout_collapseMode="pin" />
 
                 <androidx.appcompat.widget.Toolbar
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     app:layout_collapseMode="pin"
+                    app:title="@{serieViewModel.serie.name}"
                     tools:title="@tools:sample/lorem">
 
                     <ImageView
@@ -94,6 +97,7 @@
                             android:id="@+id/textSerieId"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:text="@{String.valueOf(serieViewModel.serie.id)}"
                             android:textColor="@android:color/black"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toEndOf="@id/textTitleSerieId"
@@ -116,6 +120,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:textColor="@android:color/black"
+                            android:textDate="@{serieViewModel.serie.beginAt}"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toEndOf="@id/textTitleSerieStart"
                             app:layout_constraintTop_toBottomOf="@id/textTitleSerieId"
@@ -137,6 +142,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:textColor="@android:color/black"
+                            android:textDate="@{serieViewModel.serie.endAt}"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toEndOf="@id/textTitleSerieEnd"
                             app:layout_constraintTop_toBottomOf="@id/textSerieStart"
@@ -157,6 +163,7 @@
                             android:id="@+id/textSerieLeague"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:text="@{serieViewModel.serie.league.name}"
                             android:textColor="@android:color/black"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toEndOf="@id/textTitleSerieLeague"
@@ -178,6 +185,7 @@
                             android:id="@+id/textSerieSeason"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:text="@{serieViewModel.serie.season}"
                             android:textColor="@android:color/black"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toEndOf="@id/textTitleSerieSeason"
@@ -199,6 +207,7 @@
                             android:id="@+id/textSerieSlug"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:text="@{serieViewModel.serie.slug}"
                             android:textColor="@android:color/black"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toEndOf="@id/textTitleSerieSlug"
@@ -220,6 +229,7 @@
                             android:id="@+id/textSeriePrize"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:text="@{serieViewModel.serie.tier}"
                             android:textColor="@android:color/black"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toEndOf="@id/textTitleSeriePrize"
@@ -241,6 +251,7 @@
                             android:id="@+id/textSerieWinner"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:text="@{serieViewModel.winner.acronym}"
                             android:textColor="@android:color/black"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toEndOf="@id/textTitleSerieWinner"
@@ -257,6 +268,7 @@
                     android:layout_marginHorizontal="@dimen/dp_10"
                     android:layout_marginTop="@dimen/dp_10"
                     android:background="@color/color_wild_sand"
+                    android:data="@{serieViewModel.serie.tournaments}"
                     android:paddingBottom="@dimen/dp_60"
                     app:cardCornerRadius="@dimen/dp_10"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

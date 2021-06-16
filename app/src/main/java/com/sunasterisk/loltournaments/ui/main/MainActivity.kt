@@ -6,7 +6,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
 import androidx.navigation.ui.setupWithNavController
-import com.etebarian.meowbottomnavigation.MeowBottomNavigation
 import com.sunasterisk.loltournaments.R
 import kotlinx.android.synthetic.main.activity_main.*
 

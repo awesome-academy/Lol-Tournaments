@@ -9,7 +9,7 @@
         android:name="com.sunasterisk.loltournaments.ui.home.HomeFragment"
         android:label="HomeFragment">
         <action
-            android:id="@+id/action_homeFragment_to_serieDetailFragment"
+            android:id="@+id/action_homeFragment_to_serieDetailsFragment"
             app:destination="@id/serieDetailFragment" />
     </fragment>
     <fragment
@@ -26,6 +26,10 @@
         android:label="MoreFragment" />
     <fragment
         android:id="@+id/serieDetailFragment"
-        android:name="com.sunasterisk.loltournaments.ui.SerieDetailFragment"
-        android:label="SerieDetailFragment" />
+        android:name="com.sunasterisk.loltournaments.ui.serie.SerieDetailFragment"
+        android:label="SerieDetailsFragment">
+        <argument
+            android:name="Serie"
+            app:argType="com.sunasterisk.loltournaments.data.model.remote.Serie" />
+    </fragment>
 </navigation>

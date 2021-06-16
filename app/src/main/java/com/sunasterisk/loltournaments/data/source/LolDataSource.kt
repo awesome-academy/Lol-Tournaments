@@ -4,6 +4,7 @@ import com.sunasterisk.loltournaments.data.model.local.PlayerLocal
 import com.sunasterisk.loltournaments.data.model.local.TeamLocal
 import com.sunasterisk.loltournaments.data.model.remote.League
 import com.sunasterisk.loltournaments.data.model.remote.Serie
+import com.sunasterisk.loltournaments.data.model.remote.Team
 
 interface LolDataSource {
     interface Local {
@@ -19,5 +20,6 @@ interface LolDataSource {
     interface Remote {
         suspend fun getLeagues(leagueIds: String, sortValue: String): List<League>
         suspend fun getSeries(time: String, leagueId: Int) : List<Serie>
+        suspend fun getTeamById(teamId: Int): List<Team>
     }
 }
