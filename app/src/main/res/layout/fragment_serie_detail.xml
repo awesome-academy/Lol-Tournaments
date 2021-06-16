@@ -1,6 +1,270 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_wild_sand">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_220"
+                app:contentScrim="?attr/colorPrimary"
+                app:expandedTitleGravity="center"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+                <ImageView
+                    android:id="@+id/imageSerieBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    app:layout_collapseMode="pin"
+                    tools:src="@drawable/serie_background_1" />
+
+                <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    tools:title="@tools:sample/lorem">
+
+                    <ImageView
+                        android:id="@+id/imageSerieBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_left_arrow" />
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            app:behavior_overlapTop="@dimen/dp_30"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardSerieInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@android:color/white"
+                    app:cardCornerRadius="@dimen/dp_10"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/dp_10">
+
+                        <TextView
+                            android:id="@+id/textTitleSerieId"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/text_id"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toStartOf="@id/textTitleSerieId"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintWidth_percent="0.2" />
+
+                        <TextView
+                            android:id="@+id/textSerieId"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/textTitleSerieId"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="@tools:sample/lorem" />
+
+                        <TextView
+                            android:id="@+id/textTitleSerieStart"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/text_start"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/textSerieId"
+                            app:layout_constraintWidth_percent="0.2" />
+
+                        <TextView
+                            android:id="@+id/textSerieStart"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/textTitleSerieStart"
+                            app:layout_constraintTop_toBottomOf="@id/textTitleSerieId"
+                            tools:text="@tools:sample/date/ddmmyy" />
+
+                        <TextView
+                            android:id="@+id/textTitleSerieEnd"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/text_end"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/textSerieStart"
+                            app:layout_constraintWidth_percent="0.2" />
+
+                        <TextView
+                            android:id="@+id/textSerieEnd"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/textTitleSerieEnd"
+                            app:layout_constraintTop_toBottomOf="@id/textSerieStart"
+                            tools:text="@tools:sample/date/ddmmyy" />
+
+                        <TextView
+                            android:id="@+id/textTitleSerieLeague"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/text_league"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/textSerieEnd"
+                            app:layout_constraintWidth_percent="0.2" />
+
+                        <TextView
+                            android:id="@+id/textSerieLeague"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/textTitleSerieLeague"
+                            app:layout_constraintTop_toBottomOf="@id/textSerieEnd"
+                            tools:text="@tools:sample/lorem" />
+
+                        <TextView
+                            android:id="@+id/textTitleSerieSeason"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/text_season"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/textSerieLeague"
+                            app:layout_constraintWidth_percent="0.2" />
+
+                        <TextView
+                            android:id="@+id/textSerieSeason"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/textTitleSerieSeason"
+                            app:layout_constraintTop_toBottomOf="@id/textSerieLeague"
+                            tools:text="@tools:sample/lorem" />
+
+                        <TextView
+                            android:id="@+id/textTitleSerieSlug"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/text_slug"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/textSerieSeason"
+                            app:layout_constraintWidth_percent="0.2" />
+
+                        <TextView
+                            android:id="@+id/textSerieSlug"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/textTitleSerieSlug"
+                            app:layout_constraintTop_toBottomOf="@id/textSerieSeason"
+                            tools:text="@tools:sample/lorem" />
+
+                        <TextView
+                            android:id="@+id/textTitleSeriePrize"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/text_tier"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/textSerieSlug"
+                            app:layout_constraintWidth_percent="0.2" />
+
+                        <TextView
+                            android:id="@+id/textSeriePrize"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/textTitleSeriePrize"
+                            app:layout_constraintTop_toBottomOf="@id/textSerieSlug"
+                            tools:text="@tools:sample/lorem" />
+
+                        <TextView
+                            android:id="@+id/textTitleSerieWinner"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/text_winner"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/textSeriePrize"
+                            app:layout_constraintWidth_percent="0.2" />
+
+                        <TextView
+                            android:id="@+id/textSerieWinner"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/textTitleSerieWinner"
+                            app:layout_constraintTop_toBottomOf="@id/textSeriePrize"
+                            tools:text="@tools:sample/lorem" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewTournament"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@color/color_wild_sand"
+                    android:paddingBottom="@dimen/dp_60"
+                    app:cardCornerRadius="@dimen/dp_10"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cardSerieInfo"
+                    tools:listitem="@layout/item_tournament" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
