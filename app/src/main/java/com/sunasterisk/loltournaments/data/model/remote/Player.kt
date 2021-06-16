@@ -1,7 +1,10 @@
 package com.sunasterisk.loltournaments.data.model.remote
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Player(
     @SerializedName("current_team")
     val currentTeam: Team,
@@ -17,4 +20,4 @@ data class Player(
     val nationality: String,
     val role: String,
     val slug: String
-)
+): Parcelable
