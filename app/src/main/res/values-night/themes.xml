@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.LoLTournaments" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimary">@color/color_blumine</item>
         <item name="colorPrimaryVariant">@color/color_blumine</item>
         <item name="colorOnPrimary">@android:color/black</item>
         <!-- Secondary brand color. -->

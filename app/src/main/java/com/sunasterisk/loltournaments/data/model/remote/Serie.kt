@@ -1,9 +1,12 @@
 package com.sunasterisk.loltournaments.data.model.remote
 
-import android.graphics.drawable.Drawable
+import android.os.Parcelable
 import androidx.recyclerview.widget.DiffUtil
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
+import kotlinx.android.parcel.RawValue
 
+@Parcelize
 data class Serie(
     @SerializedName("begin_at")
     val beginAt: String,
@@ -12,17 +15,17 @@ data class Serie(
     val id: Int,
     @SerializedName("league_id")
     val leagueId: Int,
-    val league: League,
+    val league: @RawValue League,
     @SerializedName("full_name")
     val name: String,
     val season: String,
     val slug: String,
     val tier: String,
-    val tournaments: List<Tournament>,
+    val tournaments: @RawValue List<Tournament>,
     @SerializedName("winner_id")
     val winnerId: Int,
     val year: Int
-) {
+) : Parcelable {
     var background: Int? = null
 
     companion object {
