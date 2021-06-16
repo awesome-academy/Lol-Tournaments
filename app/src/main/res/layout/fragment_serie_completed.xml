@@ -18,7 +18,7 @@
         android:data="@{serieViewModel.serieCompleted}"
         android:paddingHorizontal="@dimen/dp_5"
         android:paddingTop="@dimen/dp_5"
-        android:paddingBottom="@dimen/dp_50"
+        android:paddingBottom="@dimen/dp_60"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
         tools:listitem="@layout/item_serie" />

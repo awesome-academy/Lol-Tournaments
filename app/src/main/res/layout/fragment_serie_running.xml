@@ -8,6 +8,7 @@
         <variable
             name="serieViewModel"
             type="com.sunasterisk.loltournaments.ui.home.HomeViewModel" />
+
         <import type="android.view.View" />
     </data>
 
@@ -23,7 +24,7 @@
             android:data="@{serieViewModel.serieRunning}"
             android:paddingHorizontal="@dimen/dp_5"
             android:paddingTop="@dimen/dp_5"
-            android:paddingBottom="@dimen/dp_50"
+            android:paddingBottom="@dimen/dp_60"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

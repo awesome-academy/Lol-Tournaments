@@ -1,5 +1,6 @@
 package com.sunasterisk.loltournaments.ui.home
 
+import androidx.navigation.fragment.findNavController
 import com.sunasterisk.loltournaments.R
 import com.sunasterisk.loltournaments.base.BaseFragment
 import com.sunasterisk.loltournaments.data.model.remote.Serie
@@ -25,5 +26,6 @@ class SerieUpcomingFragment : BaseFragment<FragmentSerieUpcomingBinding>() {
     override fun initActions() {}
 
     private fun onSerieClick(serie: Serie) {
+        findNavController().navigate(R.id.serieDetailFragment)
     }
 }
