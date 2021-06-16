@@ -8,6 +8,17 @@
     <string name="title_completed">Completed</string>
     <string name="title_running">Running</string>
     <string name="title_upcoming">Upcoming</string>
+    <string name="title_matches">Matches</string>
 
     <string name="text_empty_series">Empty series.</string>
+    <string name="text_id">Id:</string>
+    <string name="text_start">Start:</string>
+    <string name="text_end">End:</string>
+    <string name="text_league">League:</string>
+    <string name="text_season">Season:</string>
+    <string name="text_slug">Slug:</string>
+    <string name="text_tier">Tier:</string>
+    <string name="text_winner">Winner:</string>
+    <string name="text_serie">Serie:</string>
+    <string name="text_prize">Prize:</string>
 </resources>

@@ -36,7 +36,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
     override fun initData() {
-        binding?.apply {
+        binding.apply {
             lifecycleOwner = viewLifecycleOwner
             homeViewModel = viewModel
         }
@@ -44,18 +44,16 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
     override fun initActions() {
-        binding?.let {
-            spinnerLeague.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                override fun onNothingSelected(parent: AdapterView<*>?) {}
+        binding.spinnerLeague.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
 
-                override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?,
-                    position: Int,
-                    id: Long
-                ) {
-                    viewModel.setCurrentLeagueId(leagueIds[position])
-                }
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                viewModel.setCurrentLeagueId(leagueIds[position])
             }
         }
 
@@ -75,6 +73,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
     private fun initSpinnerLeague() {
-        binding?.apply { spinnerLeague.adapter = leagueAdapter }
+        binding.spinnerLeague.adapter = leagueAdapter
     }
 }
