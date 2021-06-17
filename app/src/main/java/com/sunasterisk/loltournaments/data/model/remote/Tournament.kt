@@ -15,8 +15,8 @@ data class Tournament(
     val id: Int,
     @SerializedName("league_id")
     val leagueId: Int,
-    val league: @RawValue League,
-    val matches: @RawValue List<Match>,
+    val league: League,
+    val matches: List<Match>,
     val name: String,
     @SerializedName("prizepool")
     val prizePool: String,
@@ -24,7 +24,7 @@ data class Tournament(
     val serieId: Int,
     val serie: Serie,
     val slug: String,
-    val teams: @RawValue List<Team>,
+    val teams: List<Team>,
     @SerializedName("winner_id")
     val winnerId: Int,
 ) : Parcelable {

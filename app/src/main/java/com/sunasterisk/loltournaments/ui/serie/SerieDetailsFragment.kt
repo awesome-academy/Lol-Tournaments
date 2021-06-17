@@ -1,5 +1,6 @@
 package com.sunasterisk.loltournaments.ui.serie
 
+import androidx.navigation.fragment.findNavController
 import com.sunasterisk.loltournaments.R
 import com.sunasterisk.loltournaments.base.BaseFragment
 import com.sunasterisk.loltournaments.data.model.remote.Tournament
@@ -8,7 +9,7 @@ import com.sunasterisk.loltournaments.ui.adapter.TournamentAdapter
 import kotlinx.android.synthetic.main.fragment_serie_details.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class SerieDetailFragment : BaseFragment<FragmentSerieDetailsBinding>() {
+class SerieDetailsFragment : BaseFragment<FragmentSerieDetailsBinding>() {
     override val layoutResource = R.layout.fragment_serie_details
     override val viewModel by viewModel<SerieDetailsViewModel>()
 
@@ -23,7 +24,7 @@ class SerieDetailFragment : BaseFragment<FragmentSerieDetailsBinding>() {
         }
 
         arguments?.let {
-            val arg = SerieDetailFragmentArgs.fromBundle(it)
+            val arg = SerieDetailsFragmentArgs.fromBundle(it)
             viewModel.setSerie(arg.serie)
             arg.serie.background?.let { serie -> imageSerieBackground.setImageResource(serie) }
             recyclerViewTournament.adapter = tournamentAdapter
@@ -31,13 +32,14 @@ class SerieDetailFragment : BaseFragment<FragmentSerieDetailsBinding>() {
     }
 
     override fun initActions() {
-        binding.imageSerieBack.setOnClickListener { onBackClick() }
+        binding.let { imageSerieBack.setOnClickListener { onBackClick() } }
     }
 
     private fun onTournamentClick(tournament: Tournament) {
+        findNavController().navigate(R.id.tournamentDetailsFragment)
     }
 
     private fun onBackClick() {
+        findNavController().popBackStack()
     }
-
 }

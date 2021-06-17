@@ -15,13 +15,13 @@ data class Serie(
     val id: Int,
     @SerializedName("league_id")
     val leagueId: Int,
-    val league: @RawValue League,
+    val league: League,
     @SerializedName("full_name")
     val name: String,
     val season: String,
     val slug: String,
     val tier: String,
-    val tournaments: @RawValue List<Tournament>,
+    val tournaments: List<Tournament>,
     @SerializedName("winner_id")
     val winnerId: Int,
     val year: Int

@@ -1,7 +1,10 @@
 package com.sunasterisk.loltournaments.data.model.remote
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Match(
     val name: String,
     @SerializedName("scheduled_at")
@@ -21,4 +24,4 @@ data class Match(
     val winner: Team,
     val results: List<MatchResult>,
     val slug: String
-)
+): Parcelable

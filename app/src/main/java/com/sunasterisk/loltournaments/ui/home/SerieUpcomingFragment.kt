@@ -26,6 +26,8 @@ class SerieUpcomingFragment : BaseFragment<FragmentSerieUpcomingBinding>() {
     override fun initActions() {}
 
     private fun onSerieClick(serie: Serie) {
-        findNavController().navigate(R.id.serieDetailFragment)
+        findNavController().navigate(
+            HomeFragmentDirections.actionHomeFragmentToSerieDetailsFragment(serie)
+        )
     }
 }
