@@ -6,14 +6,17 @@ const val API_KEY = "key"
 
 const val PATH_LEAGUE = "leagues"
 const val PATH_SERIE = "series"
+const val PATH_TOURNAMENT = "tournaments"
 const val PATH_COMPLETED = "past"
 const val PATH_RUNNING = "running"
 const val PATH_UPCOMING = "upcoming"
+const val PATH_MATCH = "matches"
 const val PATH_TEAM = "teams"
 const val PATH_TIME = "time"
 
 const val QUERY_FILTER_ID = "filter[id]"
 const val QUERY_FILTER_LEAGUE_ID = "filter[league_id]"
+const val QUERY_FILTER_TOURNAMENT_ID = "filter[tournament_id]"
 const val QUERY_SORT = "sort"
 const val QUERY_VALUE_ID = "id"
 

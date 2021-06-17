@@ -38,5 +38,9 @@
     <fragment
         android:id="@+id/tournamentDetailsFragment"
         android:name="com.sunasterisk.loltournaments.ui.tournament.TournamentDetailsFragment"
-        android:label="TournamentDetailsFragment" />
+        android:label="TournamentDetailsFragment">
+        <argument
+            android:name="tournament"
+            app:argType="com.sunasterisk.loltournaments.data.model.remote.Tournament" />
+    </fragment>
 </navigation>
