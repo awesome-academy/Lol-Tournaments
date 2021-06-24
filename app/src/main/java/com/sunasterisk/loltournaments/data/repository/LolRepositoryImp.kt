@@ -10,5 +10,7 @@ class LolRepositoryImp(
 ) : LolRepository {
     override suspend fun getLeagues(leagueIds: String, sortValue: String) = remote.getLeagues(leagueIds, sortValue)
     override suspend fun getSeries(time: String, leagueId: Int): List<Serie> = remote.getSeries(time, leagueId)
+    override suspend fun getTournamentById(tournamentId: Int) = remote.getTournamentById(tournamentId)
+    override suspend fun getMatchByTournamentId(matchId: Int) = remote.getMatchByTournamentId(matchId)
     override suspend fun getTeamById(teamId: Int) = remote.getTeamById(teamId)
 }

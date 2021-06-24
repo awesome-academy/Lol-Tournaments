@@ -5,6 +5,11 @@
 
     <data>
 
+        <variable
+            name="team"
+            type="com.sunasterisk.loltournaments.data.model.remote.Team" />
+
+        <import type="com.sunasterisk.loltournaments.R" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -21,18 +26,19 @@
                 android:id="@+id/imageTeam"
                 android:layout_width="@dimen/dp_50"
                 android:layout_height="0dp"
+                loadImageUrl="@{team.imageUrl}"
                 android:padding="@dimen/dp_10"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:src="@tools:sample/avatars" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textTeamName"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:gravity="center_vertical"
+                android:text="@{team.acronym == null ? team.name : team.acronym+` (`+ team.name +`)`}"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/sp_16"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -53,5 +59,4 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-
 </layout>
