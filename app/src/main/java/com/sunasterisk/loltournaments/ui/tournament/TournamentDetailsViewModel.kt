@@ -1,6 +1,5 @@
 package com.sunasterisk.loltournaments.ui.tournament
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -37,7 +36,7 @@ class TournamentDetailsViewModel(private val lolRepository: LolRepository) : Bas
     }
 
     private fun getMatches(tournamentId: Int) {
-        viewModelScope.launch(Dispatchers.IO + exceptionHandler){
+        viewModelScope.launch(Dispatchers.IO + exceptionHandler) {
             _matches.postValue(lolRepository.getMatchByTournamentId(tournamentId))
         }
     }

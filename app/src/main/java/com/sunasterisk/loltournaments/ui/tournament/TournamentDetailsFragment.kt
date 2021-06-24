@@ -12,7 +12,11 @@ class TournamentDetailsFragment : BaseFragment<FragmentTournamentDetailsBinding>
     override val layoutResource = R.layout.fragment_tournament_details
     override val viewModel by sharedViewModel<TournamentDetailsViewModel>()
 
+    private val tournamentTeamsFragment = TournamentTeamsFragment()
+    private val tournamentMatchesFragment = TournamentMatchesFragment()
+
     override fun initViews() {
+        initTabLayoutWithViewPager()
     }
 
     override fun initData() {
@@ -29,5 +33,20 @@ class TournamentDetailsFragment : BaseFragment<FragmentTournamentDetailsBinding>
 
     override fun initActions() {
         binding.imageTournamentBack.setOnClickListener { findNavController().popBackStack() }
+    }
+
+    private fun initTabLayoutWithViewPager() {
+        val homeViewPagerAdapter = ViewPagerAdapter(childFragmentManager)
+        homeViewPagerAdapter.addFragment(
+            tournamentTeamsFragment,
+            getString(R.string.title_teams)
+        )
+        homeViewPagerAdapter.addFragment(
+            tournamentMatchesFragment,
+            getString(R.string.title_matches)
+        )
+
+        pagerTournamentInfo.adapter = homeViewPagerAdapter
+        tabTournamentInfo.setupWithViewPager(pagerTournamentInfo)
     }
 }
