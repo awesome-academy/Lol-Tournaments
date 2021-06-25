@@ -36,7 +36,9 @@ class SerieDetailsFragment : BaseFragment<FragmentSerieDetailsBinding>() {
     }
 
     private fun onTournamentClick(tournament: Tournament) {
-        findNavController().navigate(R.id.tournamentDetailsFragment)
+        findNavController().navigate(
+            SerieDetailsFragmentDirections.actionSerieDetailsFragmentToTournamentDetailsFragment(tournament)
+        )
     }
 
     private fun onBackClick() {

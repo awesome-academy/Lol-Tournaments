@@ -14,7 +14,7 @@ abstract class BaseFragment<T : ViewDataBinding> : Fragment() {
     abstract val viewModel: BaseViewModel
 
     private var _binding: T? = null
-    protected val binding: T get() = _binding ?: throw IllegalStateException(ERROR_VIEW_DATA_BINDING)
+    protected val binding: T get() = _binding!! ?: throw IllegalStateException(ERROR_VIEW_DATA_BINDING)
 
     override fun onCreateView(
         inflater: LayoutInflater,

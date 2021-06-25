@@ -22,7 +22,6 @@
             android:layout_marginHorizontal="@dimen/dp_10"
             android:data="@{tournamentViewModel.tournament.teams}"
             android:paddingTop="@dimen/dp_5"
-            android:paddingBottom="@dimen/dp_50"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_team" />
     </androidx.core.widget.NestedScrollView>
