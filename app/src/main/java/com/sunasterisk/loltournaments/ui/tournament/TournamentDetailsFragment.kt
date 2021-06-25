@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.fragment_tournament_details.*
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class TournamentDetailsFragment : BaseFragment<FragmentTournamentDetailsBinding>() {
-    override val layoutResource = R.layout.fragment_tournament_details
+    override val layoutResource get() = R.layout.fragment_tournament_details
     override val viewModel by sharedViewModel<TournamentDetailsViewModel>()
 
     private val tournamentTeamsFragment = TournamentTeamsFragment()

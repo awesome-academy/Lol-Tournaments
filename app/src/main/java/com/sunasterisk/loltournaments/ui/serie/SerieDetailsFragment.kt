@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.fragment_serie_details.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SerieDetailsFragment : BaseFragment<FragmentSerieDetailsBinding>() {
-    override val layoutResource = R.layout.fragment_serie_details
+    override val layoutResource get() = R.layout.fragment_serie_details
     override val viewModel by viewModel<SerieDetailsViewModel>()
 
     override fun initViews() {

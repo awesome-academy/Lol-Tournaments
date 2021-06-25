@@ -13,4 +13,7 @@ class LolRepositoryImp(
     override suspend fun getTournamentById(tournamentId: Int) = remote.getTournamentById(tournamentId)
     override suspend fun getMatchByTournamentId(matchId: Int) = remote.getMatchByTournamentId(matchId)
     override suspend fun getTeamById(teamId: Int) = remote.getTeamById(teamId)
+    override suspend fun getTeams(page: Int) = remote.getTeams(page)
+    override suspend fun getTeamByAcronym(teamAcronym: String, page: Int) = remote.getTeamByAcronym(teamAcronym, page)
+    override suspend fun getTeamByName(teamName: String, page: Int) = remote.getTeamByName(teamName, page)
 }

@@ -1,7 +1,5 @@
 package com.sunasterisk.loltournaments.data.source.remote
 
-import com.sunasterisk.loltournaments.data.model.remote.Team
-import com.sunasterisk.loltournaments.data.model.remote.Tournament
 import com.sunasterisk.loltournaments.data.source.LolDataSource
 
 class LolRemoteDataSource(
@@ -12,4 +10,7 @@ class LolRemoteDataSource(
     override suspend fun getTournamentById(tournamentId: Int) = apiService.getTournamentById(tournamentId)
     override suspend fun getMatchByTournamentId(matchId: Int) = apiService.getMatchByTournamentId(matchId)
     override suspend fun getTeamById(teamId: Int) = apiService.getTeamById(teamId)
+    override suspend fun getTeams(page: Int) = apiService.getTeams(page)
+    override suspend fun getTeamByAcronym(teamAcronym: String, page: Int) = apiService.getTeamByAcronym(teamAcronym, page)
+    override suspend fun getTeamByName(teamName: String, page: Int) = apiService.getTeamByName(teamName, page)
 }

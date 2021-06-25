@@ -9,7 +9,7 @@ import com.sunasterisk.loltournaments.ui.adapter.SerieAdapter
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class SerieRunningFragment : BaseFragment<FragmentSerieRunningBinding>() {
-    override val layoutResource = R.layout.fragment_serie_running
+    override val layoutResource get() = R.layout.fragment_serie_running
     override val viewModel by sharedViewModel<HomeViewModel>()
 
     override fun initViews() {}

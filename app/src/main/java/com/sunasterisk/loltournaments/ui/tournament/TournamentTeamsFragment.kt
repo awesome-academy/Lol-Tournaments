@@ -8,7 +8,7 @@ import com.sunasterisk.loltournaments.ui.adapter.TeamAdapter
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class TournamentTeamsFragment : BaseFragment<FragmentTournamentTeamsBinding>() {
-    override val layoutResource = R.layout.fragment_tournament_teams
+    override val layoutResource get() = R.layout.fragment_tournament_teams
     override val viewModel by sharedViewModel<TournamentDetailsViewModel>()
 
     override fun initViews() {
