@@ -8,7 +8,7 @@ import com.sunasterisk.loltournaments.ui.adapter.MatchAdapter
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class TournamentMatchesFragment : BaseFragment<FragmentTournamentMatchesBinding>() {
-    override val layoutResource = R.layout.fragment_tournament_matches
+    override val layoutResource get() = R.layout.fragment_tournament_matches
     override val viewModel by sharedViewModel<TournamentDetailsViewModel>()
 
     override fun initViews() {

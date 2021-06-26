@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
-    override val layoutResource = R.layout.fragment_home
+    override val layoutResource get() = R.layout.fragment_home
     override val viewModel by sharedViewModel<HomeViewModel>()
 
     private val fragmentSerieCompleted = SerieCompletedFragment()

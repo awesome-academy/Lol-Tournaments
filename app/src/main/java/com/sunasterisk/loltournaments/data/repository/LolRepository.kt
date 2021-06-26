@@ -8,4 +8,7 @@ interface LolRepository {
     suspend fun getTournamentById(tournamentId: Int): List<Tournament>
     suspend fun getMatchByTournamentId( matchId: Int): List<Match>
     suspend fun getTeamById(teamId: Int): List<Team>
+    suspend fun getTeams(page: Int) : List<Team>
+    suspend fun getTeamByAcronym(teamAcronym: String, page: Int): List<Team>
+    suspend fun getTeamByName(teamName: String, page: Int): List<Team>
 }

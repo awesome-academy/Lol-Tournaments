@@ -32,4 +32,21 @@ interface ApiService {
     suspend fun getTeamById(
         @Query(QUERY_FILTER_ID) teamId: Int
     ): List<Team>
+
+    @GET(PATH_TEAM)
+    suspend fun getTeams(
+        @Query(QUERY_SEARCH_PAGE) page: Int
+    ): List<Team>
+
+    @GET(PATH_TEAM)
+    suspend fun getTeamByAcronym(
+        @Query(QUERY_SEARCH_TEAM_ACRONYM) teamAcronym: String,
+        @Query(QUERY_SEARCH_PAGE) page: Int
+    ): List<Team>
+
+    @GET(PATH_TEAM)
+    suspend fun getTeamByName(
+        @Query(QUERY_SEARCH_TEAM_NAME) teamName: String,
+        @Query(QUERY_SEARCH_PAGE) page: Int
+    ): List<Team>
 }
