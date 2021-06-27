@@ -24,9 +24,10 @@
 
             <ImageView
                 android:id="@+id/imageTeam"
+                loadImageUrl="@{team.imageUrl}"
+                placeholder="@{R.drawable.ic_team_placeholder}"
                 android:layout_width="@dimen/dp_50"
                 android:layout_height="0dp"
-                loadImageUrl="@{team.imageUrl}"
                 android:padding="@dimen/dp_10"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"

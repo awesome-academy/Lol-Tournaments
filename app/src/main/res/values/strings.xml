@@ -11,6 +11,7 @@
     <string name="title_matches">Matches</string>
 
     <string name="text_empty_series">Empty series.</string>
+    <string name="text_empty_teams">Empty teams.</string>
     <string name="text_id">Id:</string>
     <string name="text_start">Start:</string>
     <string name="text_end">End:</string>

@@ -67,8 +67,8 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:data="@{teamsViewModel.teams}"
-            android:paddingTop="@dimen/dp_10"
             android:paddingHorizontal="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_10"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -91,7 +91,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/text_empty_series"
+            android:text="@string/text_empty_teams"
             android:textColor="@color/color_blumine"
             android:textSize="@dimen/sp_20"
             android:visibility="@{teamsViewModel.teams.size() > 0 ? View.GONE : View.VISIBLE}"
