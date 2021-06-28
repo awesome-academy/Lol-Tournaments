@@ -2,6 +2,7 @@ package com.sunasterisk.loltournaments.di
 
 import com.sunasterisk.loltournaments.ui.home.HomeViewModel
 import com.sunasterisk.loltournaments.ui.serie.SerieDetailsViewModel
+import com.sunasterisk.loltournaments.ui.team.TeamDetailsViewModel
 import com.sunasterisk.loltournaments.ui.teams.TeamsViewModel
 import com.sunasterisk.loltournaments.ui.tournament.TournamentDetailsViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -12,4 +13,5 @@ val viewModelModule = module {
     viewModel { SerieDetailsViewModel(get()) }
     viewModel { TournamentDetailsViewModel(get()) }
     viewModel { TeamsViewModel(get()) }
+    viewModel { TeamDetailsViewModel(get()) }
 }

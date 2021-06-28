@@ -13,6 +13,7 @@ class LolLocalDataSource(
 
     override suspend fun insertTeam(teamLocal: TeamLocal) = teamDao.insertTeam(teamLocal)
     override suspend fun getAllTeams() = teamDao.getAllTeams()
+    override suspend fun getTeamById(teamId: Int) = teamDao.getTeamById(teamId)
     override suspend fun deleteTeam(teamLocal: TeamLocal) = teamDao.deleteTeam(teamLocal)
 
     override suspend fun insertPlayer(playerLocal: PlayerLocal) = playerDao.insertPlayer(playerLocal)

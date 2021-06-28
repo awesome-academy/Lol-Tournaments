@@ -1,6 +1,7 @@
 package com.sunasterisk.loltournaments.ui.teams
 
 import android.widget.SearchView
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sunasterisk.loltournaments.R
 import com.sunasterisk.loltournaments.base.BaseFragment
@@ -75,5 +76,8 @@ class TeamsFragment : BaseFragment<FragmentTeamsBinding>() {
     }
 
     private fun onTeamClick(team: Team) {
+        findNavController().navigate(
+            TeamsFragmentDirections.actionTeamsFragmentToTeamDetailsFragment(team)
+        )
     }
 }

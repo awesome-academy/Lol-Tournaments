@@ -14,6 +14,9 @@ interface TeamDao {
     @Query("SELECT * FROM teams")
     fun getAllTeams(): List<TeamLocal>?
 
+    @Query("SELECT * FROM teams WHERE teamId = :teamId")
+    fun getTeamById(teamId: Int): List<TeamLocal>?
+
     @Delete
     fun deleteTeam(teamLocal: TeamLocal): Int
 }

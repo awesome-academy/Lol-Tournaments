@@ -5,6 +5,13 @@
 
     <data>
 
+        <variable
+            name="teamViewModel"
+            type="com.sunasterisk.loltournaments.ui.team.TeamDetailsViewModel" />
+
+        <import type="android.view.View" />
+
+        <import type="com.sunasterisk.loltournaments.R" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -26,7 +33,8 @@
                 app:expandedTitleMarginStart="@dimen/dp_40"
                 app:expandedTitleMarginTop="@dimen/dp_16"
                 app:expandedTitleTextAppearance="@style/ExpandedBarTextStyle"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+                app:title="@{teamViewModel.team.name}">
 
                 <ImageView
                     android:id="@+id/imageTeamBackground"
@@ -46,6 +54,8 @@
 
                 <ImageView
                     android:id="@+id/imagePlayer"
+                    loadImageUrl="@{teamViewModel.team.imageUrl}"
+                    placeholder="@{R.drawable.ic_team_placeholder}"
                     android:layout_width="@dimen/dp_55"
                     android:layout_height="@dimen/dp_55"
                     android:layout_gravity="center"
@@ -58,6 +68,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|bottom"
                     android:layout_marginBottom="@dimen/dp_30"
+                    android:text="@{teamViewModel.team.name}"
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/sp_20"
                     app:layout_collapseMode="parallax"
@@ -116,6 +127,7 @@
                         android:id="@+id/textTeamId"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:text="@{String.valueOf(teamViewModel.team.id)}"
                         android:textColor="@android:color/black"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/textTitleTeamId"
@@ -137,6 +149,7 @@
                         android:id="@+id/textTeamName"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:text="@{teamViewModel.team.name}"
                         android:textColor="@android:color/black"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/textTitleTeamName"
@@ -158,6 +171,7 @@
                         android:id="@+id/textTeamLocation"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:text="@{teamViewModel.team.location}"
                         android:textColor="@android:color/black"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
@@ -180,6 +194,7 @@
                         android:id="@+id/textTeamSlug"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:text="@{teamViewModel.team.slug}"
                         android:textColor="@android:color/black"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/textTitleTeamSlug"
@@ -220,7 +235,7 @@
                 android:layout_height="0dp"
                 android:layout_marginTop="@dimen/dp_1"
                 android:background="@color/color_wild_sand"
-                android:paddingBottom="@dimen/dp_60"
+                android:data="@{teamViewModel.team.players}"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -234,21 +249,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:layout_marginEnd="@dimen/dp_16"
-            android:layout_marginBottom="@dimen/dp_70"
+            android:layout_margin="@dimen/dp_16"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_favorite"
-            android:theme="@style/Theme.ActionFavoriteStyle" />
+            android:theme="@style/Theme.ActionFavoriteStyle"
+            android:visibility="@{teamViewModel.isFavorite() ? View.VISIBLE : View.GONE}" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionUnFavorite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:layout_marginEnd="@dimen/dp_16"
-            android:layout_marginBottom="@dimen/dp_70"
+            android:layout_margin="@dimen/dp_16"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_favorite"
-            android:theme="@style/Theme.ActionUnFavoriteStyle" />
+            android:theme="@style/Theme.ActionUnFavoriteStyle"
+            android:visibility="@{teamViewModel.isFavorite() ? View.GONE : View.VISIBLE}" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
