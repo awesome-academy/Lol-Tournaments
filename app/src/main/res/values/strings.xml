@@ -9,6 +9,7 @@
     <string name="title_running">Running</string>
     <string name="title_upcoming">Upcoming</string>
     <string name="title_matches">Matches</string>
+    <string name="title_members">Members</string>
 
     <string name="text_empty_series">Empty series.</string>
     <string name="text_empty_teams">Empty teams.</string>
@@ -22,4 +23,6 @@
     <string name="text_winner">Winner:</string>
     <string name="text_serie">Serie:</string>
     <string name="text_prize">Prize:</string>
+    <string name="text_name">Name:</string>
+    <string name="text_location">Location:</string>
 </resources>

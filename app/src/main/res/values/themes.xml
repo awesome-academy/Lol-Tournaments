@@ -18,4 +18,21 @@
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowBackground">@drawable/splash_screen_background</item>
     </style>
+
+    <style name="ExpandedBarTextStyle" parent="Theme.AppCompat">
+        <item name="android:textColor">@android:color/transparent</item>
+        <item name="android:textSize">@dimen/dp_20</item>
+    </style>
+
+    <style name="Theme.ActionFavoriteStyle" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorSecondary">@color/color_milano_red</item>
+        <item name="colorSecondaryVariant">@color/color_silver</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+    </style>
+
+    <style name="Theme.ActionUnFavoriteStyle" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorSecondary">@android:color/white</item>
+        <item name="colorSecondaryVariant">@color/color_silver</item>
+        <item name="colorOnSecondary">@color/color_silver</item>
+    </style>
 </resources>
