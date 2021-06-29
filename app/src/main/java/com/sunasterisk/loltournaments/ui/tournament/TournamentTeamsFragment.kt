@@ -1,10 +1,12 @@
 package com.sunasterisk.loltournaments.ui.tournament
 
+import androidx.navigation.fragment.findNavController
 import com.sunasterisk.loltournaments.R
 import com.sunasterisk.loltournaments.base.BaseFragment
 import com.sunasterisk.loltournaments.data.model.remote.Team
 import com.sunasterisk.loltournaments.databinding.FragmentTournamentTeamsBinding
 import com.sunasterisk.loltournaments.ui.adapter.TeamAdapter
+import com.sunasterisk.loltournaments.ui.teams.TeamsFragmentDirections
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class TournamentTeamsFragment : BaseFragment<FragmentTournamentTeamsBinding>() {
@@ -28,5 +30,8 @@ class TournamentTeamsFragment : BaseFragment<FragmentTournamentTeamsBinding>() {
     }
 
     private fun onTeamClick(team: Team) {
+        findNavController().navigate(
+            TournamentDetailsFragmentDirections.actionTournamentDetailsFragmentToTeamDetailsFragment(team)
+        )
     }
 }

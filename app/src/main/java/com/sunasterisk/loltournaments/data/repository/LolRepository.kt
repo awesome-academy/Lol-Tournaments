@@ -4,7 +4,9 @@ import com.sunasterisk.loltournaments.data.model.local.TeamLocal
 import com.sunasterisk.loltournaments.data.model.remote.*
 
 interface LolRepository {
+    suspend fun insertLocalTeam(teamLocal: TeamLocal): Long
     suspend fun getLocalTeamById(teamId: Int): List<TeamLocal>?
+    suspend fun deleteLocalTeam(teamLocal: TeamLocal): Int
 
     suspend fun getLeagues(leagueIds: String, sortValue: String) : List<League>
     suspend fun getSeries(time: String, leagueId: Int) : List<Serie>

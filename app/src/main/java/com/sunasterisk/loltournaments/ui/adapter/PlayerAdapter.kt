@@ -29,13 +29,15 @@ class PlayerAdapter(
             super.onBind(item)
 
             binding.imagePlayerRole.apply {
-                when (item.role) {
-                    ROLE_TOP -> setImageResource(R.drawable.ic_role_top)
-                    ROLE_JUN -> setImageResource(R.drawable.ic_role_jun)
-                    ROLE_MID -> setImageResource(R.drawable.ic_role_mid)
-                    ROLE_ADC -> setImageResource(R.drawable.ic_role_adc)
-                    ROLE_SUP -> setImageResource(R.drawable.ic_role_sup)
-                    else -> null
+                item.role?.let {
+                    when (it) {
+                        ROLE_TOP -> setImageResource(R.drawable.ic_role_top)
+                        ROLE_JUN -> setImageResource(R.drawable.ic_role_jun)
+                        ROLE_MID -> setImageResource(R.drawable.ic_role_mid)
+                        ROLE_ADC -> setImageResource(R.drawable.ic_role_adc)
+                        ROLE_SUP -> setImageResource(R.drawable.ic_role_sup)
+                        else -> null
+                    }
                 }
             }
 

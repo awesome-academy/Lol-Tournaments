@@ -8,13 +8,13 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Team(
-    val acronym: String,
+    val acronym: String?,
     val id: Int,
     @SerializedName("image_url")
     val imageUrl: String,
     val location: String,
     val name: String,
-    val players: List<Player>,
+    var players: List<Player>,
     val slug: String
 ) : Parcelable {
 

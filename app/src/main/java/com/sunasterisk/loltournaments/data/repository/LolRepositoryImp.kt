@@ -1,5 +1,6 @@
 package com.sunasterisk.loltournaments.data.repository
 
+import com.sunasterisk.loltournaments.data.model.local.TeamLocal
 import com.sunasterisk.loltournaments.data.model.remote.Serie
 import com.sunasterisk.loltournaments.data.model.remote.Team
 import com.sunasterisk.loltournaments.data.source.LolDataSource
@@ -8,7 +9,9 @@ class LolRepositoryImp(
     private val remote: LolDataSource.Remote,
     private val local: LolDataSource.Local
 ) : LolRepository {
+    override suspend fun insertLocalTeam(teamLocal: TeamLocal) = local.insertTeam(teamLocal)
     override suspend fun getLocalTeamById(teamId: Int) = local.getTeamById(teamId)
+    override suspend fun deleteLocalTeam(teamLocal: TeamLocal) = local.deleteTeam(teamLocal)
 
     override suspend fun getLeagues(leagueIds: String, sortValue: String) = remote.getLeagues(leagueIds, sortValue)
     override suspend fun getSeries(time: String, leagueId: Int): List<Serie> = remote.getSeries(time, leagueId)
