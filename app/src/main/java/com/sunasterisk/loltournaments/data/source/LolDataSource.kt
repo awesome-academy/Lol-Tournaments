@@ -8,6 +8,7 @@ interface LolDataSource {
     interface Local {
         suspend fun insertTeam(teamLocal: TeamLocal): Long
         suspend fun getAllTeams(): List<TeamLocal>?
+        suspend fun getTeamById(teamId: Int): List<TeamLocal>?
         suspend fun deleteTeam(teamLocal: TeamLocal): Int
 
         suspend fun insertPlayer(playerLocal: PlayerLocal): Long

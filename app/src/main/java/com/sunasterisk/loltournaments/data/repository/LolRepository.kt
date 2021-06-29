@@ -1,8 +1,11 @@
 package com.sunasterisk.loltournaments.data.repository
 
+import com.sunasterisk.loltournaments.data.model.local.TeamLocal
 import com.sunasterisk.loltournaments.data.model.remote.*
 
 interface LolRepository {
+    suspend fun getLocalTeamById(teamId: Int): List<TeamLocal>?
+
     suspend fun getLeagues(leagueIds: String, sortValue: String) : List<League>
     suspend fun getSeries(time: String, leagueId: Int) : List<Serie>
     suspend fun getTournamentById(tournamentId: Int): List<Tournament>

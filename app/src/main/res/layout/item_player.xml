@@ -5,6 +5,11 @@
 
     <data>
 
+        <variable
+            name="player"
+            type="com.sunasterisk.loltournaments.data.model.remote.Player" />
+
+        <import type="com.sunasterisk.loltournaments.R" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -31,6 +36,8 @@
                 tools:src="@tools:sample/avatars">
 
                 <ImageView
+                    loadImageUrl="@{player.imageUrl}"
+                    placeholder="@{R.drawable.ic_player_placeholder}"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
@@ -44,6 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp_10"
                 android:gravity="center_vertical"
+                android:text="@{player.name}"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/sp_18"
                 app:layout_constraintBottom_toTopOf="@id/textPlayerName"
@@ -56,6 +64,7 @@
                 android:layout_width="@dimen/dp_20"
                 android:layout_height="0dp"
                 android:layout_marginStart="@dimen/dp_5"
+                android:layout_marginBottom="1dp"
                 app:layout_constraintBottom_toTopOf="@+id/textPlayerName"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintStart_toEndOf="@+id/textPlayerNameInGame"
@@ -67,6 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp_10"
                 android:gravity="center_vertical"
+                android:text="@{`name: `+ player.fullName}"
                 android:textSize="@dimen/sp_12"
                 app:layout_constraintBottom_toBottomOf="@+id/imagePlayer"
                 app:layout_constraintEnd_toEndOf="parent"
