@@ -34,7 +34,7 @@
                 app:expandedTitleMarginTop="@dimen/dp_16"
                 app:expandedTitleTextAppearance="@style/ExpandedBarTextStyle"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
-                app:title="@{teamViewModel.team.name}">
+                app:title="@{teamViewModel.team.acronym != null ? teamViewModel.team.acronym : teamViewModel.team.name}">
 
                 <ImageView
                     android:id="@+id/imageTeamBackground"
@@ -68,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|bottom"
                     android:layout_marginBottom="@dimen/dp_30"
-                    android:text="@{teamViewModel.team.name}"
+                    android:text="@{teamViewModel.team.acronym != null ? teamViewModel.team.acronym : teamViewModel.team.name}"
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/sp_20"
                     app:layout_collapseMode="parallax"
@@ -250,6 +250,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="@dimen/dp_16"
+            android:onClick="@{() -> teamViewModel.setFavorite()}"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_favorite"
             android:theme="@style/Theme.ActionFavoriteStyle"
@@ -261,6 +262,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="@dimen/dp_16"
+            android:onClick="@{() -> teamViewModel.setFavorite()}"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_favorite"
             android:theme="@style/Theme.ActionUnFavoriteStyle"

@@ -20,7 +20,7 @@ data class Player(
     val name: String,
     val hometown: String,
     val nationality: String,
-    val role: String,
+    val role: String?,
     val slug: String
 ) : Parcelable {
     val fullName: String

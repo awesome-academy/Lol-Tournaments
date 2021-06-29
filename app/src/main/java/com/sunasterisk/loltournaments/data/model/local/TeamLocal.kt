@@ -10,7 +10,7 @@ data class TeamLocal(
     @ColumnInfo(name = "teamId")
     val id: Int,
     @ColumnInfo(name = "acronym")
-    val acronym: String,
+    val acronym: String?,
     @ColumnInfo(name = "imageUrl")
     val imageUrl: String,
     @ColumnInfo(name = "location")
