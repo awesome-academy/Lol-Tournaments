@@ -10,15 +10,19 @@
         android:label="HomeFragment">
         <action
             android:id="@+id/action_homeFragment_to_serieDetailsFragment"
-            app:destination="@id/serieDetailsFragment" />
+            app:destination="@id/serieDetailsFragment"
+            app:enterAnim="@anim/anim_push_in"
+            app:popExitAnim="@anim/anim_push_out" />
     </fragment>
     <fragment
         android:id="@+id/teamsFragment"
         android:name="com.sunasterisk.loltournaments.ui.teams.TeamsFragment"
-        android:label="TeamsFragment" >
+        android:label="TeamsFragment">
         <action
             android:id="@+id/action_teamsFragment_to_teamDetailsFragment"
-            app:destination="@id/teamDetailsFragment" />
+            app:destination="@id/teamDetailsFragment"
+            app:enterAnim="@anim/anim_push_in"
+            app:popExitAnim="@anim/anim_push_out" />
     </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
@@ -37,7 +41,9 @@
             app:argType="com.sunasterisk.loltournaments.data.model.remote.Serie" />
         <action
             android:id="@+id/action_serieDetailsFragment_to_tournamentDetailsFragment"
-            app:destination="@id/tournamentDetailsFragment" />
+            app:destination="@id/tournamentDetailsFragment"
+            app:enterAnim="@anim/anim_push_in"
+            app:popExitAnim="@anim/anim_push_out" />
     </fragment>
     <fragment
         android:id="@+id/tournamentDetailsFragment"
@@ -48,7 +54,9 @@
             app:argType="com.sunasterisk.loltournaments.data.model.remote.Tournament" />
         <action
             android:id="@+id/action_tournamentDetailsFragment_to_teamDetailsFragment"
-            app:destination="@id/teamDetailsFragment" />
+            app:destination="@id/teamDetailsFragment"
+            app:enterAnim="@anim/anim_push_in"
+            app:popExitAnim="@anim/anim_push_out" />
     </fragment>
     <fragment
         android:id="@+id/teamDetailsFragment"
@@ -56,7 +64,6 @@
         android:label="TeamDetailsFragment">
         <argument
             android:name="team"
-            app:argType="com.sunasterisk.loltournaments.data.model.remote.Team"
-            />
+            app:argType="com.sunasterisk.loltournaments.data.model.remote.Team" />
     </fragment>
 </navigation>
