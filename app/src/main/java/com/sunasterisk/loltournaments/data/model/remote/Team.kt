@@ -12,11 +12,27 @@ data class Team(
     val id: Int,
     @SerializedName("image_url")
     val imageUrl: String,
-    val location: String,
+    val location: String?,
     val name: String,
     var players: List<Player>,
     val slug: String
 ) : Parcelable {
+
+    constructor(
+        acronym: String?,
+        id: Int,
+        imageUrl: String,
+        location: String?,
+        name: String,
+        slug: String
+    ) : this(acronym, id, imageUrl, location, name, listOf(), slug)
+
+    fun setPlayersId() {
+        players.map { player ->
+            player.teamId = id
+            player
+        }
+    }
 
     fun toLocalTeam() = TeamLocal(id, acronym, imageUrl, location, name, slug)
 

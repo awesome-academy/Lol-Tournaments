@@ -27,7 +27,11 @@
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.sunasterisk.loltournaments.ui.favorite.FavoriteFragment"
-        android:label="FavoriteFragment" />
+        android:label="FavoriteFragment" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_teamDetailsFragment"
+            app:destination="@id/teamDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/moreFragment"
         android:name="com.sunasterisk.loltournaments.ui.more.MoreFragment"
