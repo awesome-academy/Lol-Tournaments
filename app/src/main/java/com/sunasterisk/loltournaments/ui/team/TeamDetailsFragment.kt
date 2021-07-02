@@ -1,6 +1,7 @@
 package com.sunasterisk.loltournaments.ui.team
 
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.sunasterisk.loltournaments.R
 import com.sunasterisk.loltournaments.base.BaseFragment
 import com.sunasterisk.loltournaments.data.model.remote.Player
@@ -24,10 +25,8 @@ class TeamDetailsFragment : BaseFragment<FragmentTeamDetailsBinding>() {
             recyclerViewTeam.adapter = playerAdapter
         }
 
-        arguments?.let {
-            val arg = TeamDetailsFragmentArgs.fromBundle(it)
-            viewModel.getTeam(arg.team)
-        }
+        val arg: TeamDetailsFragmentArgs by navArgs()
+        viewModel.getTeam(arg.team)
     }
 
     override fun initActions() {
@@ -35,5 +34,8 @@ class TeamDetailsFragment : BaseFragment<FragmentTeamDetailsBinding>() {
     }
 
     private fun onPlayerClick(player: Player) {
+        findNavController().navigate(
+            TeamDetailsFragmentDirections.actionTeamDetailsFragmentToPlayerDetailsFragment(player)
+        )
     }
 }
