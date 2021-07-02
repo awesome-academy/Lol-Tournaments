@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="favoriteViewModel"
+            type="com.sunasterisk.loltournaments.ui.favorite.FavoriteViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -45,33 +48,23 @@
             app:layout_constraintStart_toEndOf="@id/imageFavorite"
             app:layout_constraintTop_toTopOf="@id/imageFavoriteBackground" />
 
-        <SearchView
-            android:id="@+id/searchViewFavorite"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dp_10"
-            android:background="@drawable/search_background"
-            android:theme="@style/Theme.AppCompat.DayNight"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imageFavoriteBackground"
-            app:searchIcon="@drawable/ic_baseline_search_24" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewFavorite"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:data="@{favoriteViewModel.teams}"
             android:padding="@dimen/dp_10"
             android:paddingBottom="@dimen/dp_50"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/searchViewFavorite"
+            app:layout_constraintTop_toBottomOf="@id/imageFavoriteBackground"
             tools:listitem="@layout/item_team" />
 
         <ImageView
             android:id="@+id/imageEmpty"
+            isVisible="@{!(favoriteViewModel.teams.size() > 0)}"
             android:layout_width="@dimen/dp_100"
             android:layout_height="0dp"
             android:layout_marginTop="@dimen/dp_210"
@@ -82,6 +75,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            isVisible="@{!(favoriteViewModel.teams.size() > 0)}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/text_empty_teams"
@@ -92,6 +86,7 @@
             app:layout_constraintTop_toBottomOf="@id/imageEmpty" />
 
         <com.airbnb.lottie.LottieAnimationView
+            isVisible="@{favoriteViewModel.isLoading}"
             android:layout_width="@dimen/dp_200"
             android:layout_height="@dimen/dp_200"
             app:layout_constraintBottom_toBottomOf="parent"

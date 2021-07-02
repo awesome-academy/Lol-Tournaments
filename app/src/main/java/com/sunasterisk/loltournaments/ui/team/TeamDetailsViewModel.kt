@@ -19,10 +19,13 @@ class TeamDetailsViewModel(private val lolRepository: LolRepository) : BaseViewM
     fun getTeam(team: Team) {
         if (team.players.isNullOrEmpty()) {
             viewModelScope.launch(Dispatchers.IO + exceptionHandler) {
-                _team.postValue(lolRepository.getTeamById(team.id).first())
+                val team = lolRepository.getTeamById(team.id).first().apply { setPlayersId() }
+                _team.postValue(team)
             }
         } else {
+            team.setPlayersId()
             _team.value = team
+
         }
         getFavorite(team.id)
     }
@@ -39,9 +42,16 @@ class TeamDetailsViewModel(private val lolRepository: LolRepository) : BaseViewM
             team.value?.let {
                 if (isFavorite.value == false) {
                     lolRepository.insertLocalTeam(it.toLocalTeam())
+                    for (player in it.players) {
+                        lolRepository.insertLocalPlayer(player.toLocalPlayer())
+                    }
                 } else {
                     lolRepository.deleteLocalTeam(it.toLocalTeam())
+                    for (player in it.players) {
+                        lolRepository.deleteLocalPlayer(player.toLocalPlayer())
+                    }
                 }
+
                 getFavorite(it.id)
             }
         }

@@ -3,6 +3,7 @@ package com.sunasterisk.loltournaments.data.model.local
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.sunasterisk.loltournaments.data.model.remote.Team
 
 @Entity(tableName = "teams")
 data class TeamLocal(
@@ -14,8 +15,10 @@ data class TeamLocal(
     @ColumnInfo(name = "imageUrl")
     val imageUrl: String,
     @ColumnInfo(name = "location")
-    val location: String,
+    val location: String?,
     @ColumnInfo(name = "name")
     val name: String,
     val slug: String
-)
+) {
+    fun toRemoteTeam() = Team(acronym, id, imageUrl, location, name, slug)
+}

@@ -1,5 +1,6 @@
 package com.sunasterisk.loltournaments.di
 
+import com.sunasterisk.loltournaments.ui.favorite.FavoriteViewModel
 import com.sunasterisk.loltournaments.ui.home.HomeViewModel
 import com.sunasterisk.loltournaments.ui.serie.SerieDetailsViewModel
 import com.sunasterisk.loltournaments.ui.team.TeamDetailsViewModel
@@ -14,4 +15,5 @@ val viewModelModule = module {
     viewModel { TournamentDetailsViewModel(get()) }
     viewModel { TeamsViewModel(get()) }
     viewModel { TeamDetailsViewModel(get()) }
+    viewModel { FavoriteViewModel(get()) }
 }
