@@ -82,7 +82,7 @@
             android:layout_height="0dp"
             android:layout_marginTop="@dimen/dp_210"
             android:src="@drawable/ic_empty"
-            android:visibility="@{teamsViewModel.teams.size() > 0 ? View.GONE : View.VISIBLE}"
+            isVisible="@{!(teamsViewModel.teams.size() > 0)}"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -94,7 +94,7 @@
             android:text="@string/text_empty_teams"
             android:textColor="@color/color_blumine"
             android:textSize="@dimen/sp_20"
-            android:visibility="@{teamsViewModel.teams.size() > 0 ? View.GONE : View.VISIBLE}"
+            isVisible="@{!(teamsViewModel.teams.size() > 0)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imageEmpty" />

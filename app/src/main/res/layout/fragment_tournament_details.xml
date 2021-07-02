@@ -285,7 +285,7 @@
             android:layout_width="@dimen/dp_200"
             android:layout_height="@dimen/dp_200"
             android:layout_gravity="center"
-            android:visibility="@{tournamentViewModel.isLoading ? View.VISIBLE : View.GONE}"
+            isVisible="@{tournamentViewModel.isLoading}"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
             app:lottie_rawRes="@raw/loading"

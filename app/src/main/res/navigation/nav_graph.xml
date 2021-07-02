@@ -27,7 +27,7 @@
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.sunasterisk.loltournaments.ui.favorite.FavoriteFragment"
-        android:label="FavoriteFragment" >
+        android:label="FavoriteFragment">
         <action
             android:id="@+id/action_favoriteFragment_to_teamDetailsFragment"
             app:destination="@id/teamDetailsFragment" />
@@ -69,5 +69,14 @@
         <argument
             android:name="team"
             app:argType="com.sunasterisk.loltournaments.data.model.remote.Team" />
+        <action
+            android:id="@+id/action_teamDetailsFragment_to_playerDetailsFragment"
+            app:destination="@id/playerDetailsFragment"
+            app:enterAnim="@anim/anim_push_in"
+            app:popExitAnim="@anim/anim_push_out" />
     </fragment>
+    <fragment
+        android:id="@+id/playerDetailsFragment"
+        android:name="com.sunasterisk.loltournaments.ui.player.PlayerDetailsFragment"
+        android:label="PlayerDetailsFragment" />
 </navigation>
