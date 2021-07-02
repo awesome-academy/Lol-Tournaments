@@ -25,4 +25,8 @@
     <string name="text_prize">Prize:</string>
     <string name="text_name">Name:</string>
     <string name="text_location">Location:</string>
+    <string name="text_birthday">Birthday:</string>
+    <string name="text_hometown">Hometown:</string>
+    <string name="text_nationality">Nationality:</string>
+    <string name="text_role">Role:</string>
 </resources>
