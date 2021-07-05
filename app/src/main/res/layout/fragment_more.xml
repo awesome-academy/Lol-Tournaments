@@ -1,7 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/color_wild_sand">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_wild_sand">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_200"
+            android:background="@drawable/splash_screen_background"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardAboutApp"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_55"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            android:layout_marginTop="180dp"
+            app:cardCornerRadius="@dimen/dp_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/dp_5"
+                android:drawablePadding="@dimen/dp_10"
+                android:padding="@dimen/dp_5"
+                android:text="@string/title_about_app"
+                android:textColor="@color/color_river_bed"
+                android:textSize="@dimen/sp_24"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/ic_outline_info_24" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardNotification"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_55"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_5"
+            app:cardCornerRadius="@dimen/dp_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardAboutApp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/dp_5"
+                android:drawablePadding="@dimen/dp_10"
+                android:padding="@dimen/dp_5"
+                android:text="@string/title_notification"
+                android:textColor="@color/color_river_bed"
+                android:textSize="@dimen/sp_24"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/ic_baseline_notifications_active_24" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardShare"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_55"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_5"
+            app:cardCornerRadius="@dimen/dp_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardNotification">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/dp_5"
+                android:drawablePadding="@dimen/dp_10"
+                android:padding="@dimen/dp_5"
+                android:text="@string/title_share"
+                android:textColor="@color/color_river_bed"
+                android:textSize="@dimen/sp_24"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/ic_baseline_share_24" />
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

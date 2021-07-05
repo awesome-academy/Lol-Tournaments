@@ -10,6 +10,13 @@
     <string name="title_upcoming">Upcoming</string>
     <string name="title_matches">Matches</string>
     <string name="title_members">Members</string>
+    <string name="title_about_app">About App</string>
+    <string name="title_notification">Notification</string>
+    <string name="title_share">Share</string>
+    <string name="title_app_owner">Made by:</string>
+    <string name="title_version">Version:</string>
+    <string name="title_contact">Contact:</string>
+
 
     <string name="text_empty_series">Empty series.</string>
     <string name="text_empty_teams">Empty teams.</string>
@@ -29,4 +36,8 @@
     <string name="text_hometown">Hometown:</string>
     <string name="text_nationality">Nationality:</string>
     <string name="text_role">Role:</string>
+    <string name="text_dev">Nguyen Huu Nam</string>
+    <string name="text_version">1.0</string>
+    <string name="text_facebook">https://www.facebook.com/zGararz</string>
+    <string name="link_app">Lol Tournament</string>
 </resources>

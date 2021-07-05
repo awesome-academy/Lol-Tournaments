@@ -11,7 +11,7 @@ import java.lang.IllegalStateException
 
 abstract class BaseFragment<T : ViewDataBinding> : Fragment() {
     protected abstract val layoutResource: Int
-    abstract val viewModel: BaseViewModel
+    abstract val viewModel: BaseViewModel?
 
     private var _binding: T? = null
     protected val binding: T get() = _binding!! ?: throw IllegalStateException(ERROR_VIEW_DATA_BINDING)
