@@ -11,6 +11,8 @@ data class Match(
     val name: String,
     @SerializedName("scheduled_at")
     val scheduledAt: String,
+    @SerializedName("official_stream_url")
+    val streamUrl: String,
     @SerializedName("number_of_games")
     val numberOfGames: Int,
     val opponents: List<Opponent>,
@@ -39,6 +41,7 @@ data class Match(
 
     fun getFirstTeam() = opponents.first().opponent
     fun getSecondTeam() = opponents.last().opponent
+    fun getTitleNotification() = "${league.name} ${serie.name}"
 
     fun getScore(): String {
         val scoreFirstTeam = results.first().score

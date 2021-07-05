@@ -3,6 +3,7 @@ package com.sunasterisk.loltournaments.ui.home
 import android.view.View
 import android.widget.AdapterView
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.sunasterisk.loltournaments.R
 import com.sunasterisk.loltournaments.base.BaseFragment
 import com.sunasterisk.loltournaments.data.source.remote.*
@@ -44,17 +45,21 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
     override fun initActions() {
-        binding.spinnerLeague.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        binding.apply {
+            spinnerLeague.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                override fun onNothingSelected(parent: AdapterView<*>?) {}
 
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                viewModel.setCurrentLeagueId(leagueIds[position])
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
+                    viewModel.setCurrentLeagueId(leagueIds[position])
+                }
             }
+
+            imageNotify.setOnClickListener { findNavController().navigate(R.id.notificationFragment) }
         }
 
         viewModel.leagues.observe(viewLifecycleOwner, Observer {
@@ -64,7 +69,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     private fun initTabLayoutWithViewPager() {
         val homeViewPagerAdapter = ViewPagerAdapter(childFragmentManager)
-        homeViewPagerAdapter.addFragment(fragmentSerieCompleted, getString(R.string.title_completed))
+        homeViewPagerAdapter.addFragment(
+            fragmentSerieCompleted,
+            getString(R.string.title_completed)
+        )
         homeViewPagerAdapter.addFragment(fragmentSerieRunning, getString(R.string.title_running))
         homeViewPagerAdapter.addFragment(fragmentSerieUpcoming, getString(R.string.title_upcoming))
 
