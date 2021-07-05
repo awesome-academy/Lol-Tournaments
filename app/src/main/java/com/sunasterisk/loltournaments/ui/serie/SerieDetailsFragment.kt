@@ -1,6 +1,7 @@
 package com.sunasterisk.loltournaments.ui.serie
 
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.sunasterisk.loltournaments.R
 import com.sunasterisk.loltournaments.base.BaseFragment
 import com.sunasterisk.loltournaments.data.model.remote.Tournament
@@ -23,12 +24,12 @@ class SerieDetailsFragment : BaseFragment<FragmentSerieDetailsBinding>() {
             serieViewModel = viewModel
         }
 
-        arguments?.let {
-            val arg = SerieDetailsFragmentArgs.fromBundle(it)
-            viewModel.setSerie(arg.serie)
-            arg.serie.background?.let { serie -> imageSerieBackground.setImageResource(serie) }
-            recyclerViewTournament.adapter = tournamentAdapter
-        }
+
+        val arg: SerieDetailsFragmentArgs by navArgs()
+        viewModel.setSerie(arg.serie)
+        arg.serie.background?.let { serie -> imageSerieBackground.setImageResource(serie) }
+        recyclerViewTournament.adapter = tournamentAdapter
+
     }
 
     override fun initActions() {
@@ -37,7 +38,9 @@ class SerieDetailsFragment : BaseFragment<FragmentSerieDetailsBinding>() {
 
     private fun onTournamentClick(tournament: Tournament) {
         findNavController().navigate(
-            SerieDetailsFragmentDirections.actionSerieDetailsFragmentToTournamentDetailsFragment(tournament)
+            SerieDetailsFragmentDirections.actionSerieDetailsFragmentToTournamentDetailsFragment(
+                tournament
+            )
         )
     }
 

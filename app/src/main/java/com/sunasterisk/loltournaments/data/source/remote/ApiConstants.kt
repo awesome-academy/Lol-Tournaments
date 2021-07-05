@@ -20,6 +20,8 @@ const val QUERY_FILTER_TOURNAMENT_ID = "filter[tournament_id]"
 const val QUERY_SEARCH_TEAM_ACRONYM = "search[acronym]"
 const val QUERY_SEARCH_TEAM_NAME = "search[name]"
 const val QUERY_SEARCH_PAGE = "page"
+const val QUERY_SEARCH_PER_PAGE = "per_page"
+const val PER_PAGE_100 = 100
 const val QUERY_SORT = "sort"
 const val QUERY_VALUE_ID = "id"
 

@@ -1,6 +1,7 @@
 package com.sunasterisk.loltournaments.ui.tournament
 
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.sunasterisk.loltournaments.R
 import com.sunasterisk.loltournaments.base.BaseFragment
 import com.sunasterisk.loltournaments.databinding.FragmentTournamentDetailsBinding
@@ -25,10 +26,8 @@ class TournamentDetailsFragment : BaseFragment<FragmentTournamentDetailsBinding>
             tournamentViewModel = viewModel
         }
 
-        arguments?.let {
-            val arg = TournamentDetailsFragmentArgs.fromBundle(it)
-            viewModel.getData(arg.tournament)
-        }
+        val arg: TournamentDetailsFragmentArgs by navArgs()
+        viewModel.getData(arg.tournament)
     }
 
     override fun initActions() {

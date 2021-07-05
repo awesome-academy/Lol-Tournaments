@@ -25,7 +25,8 @@ interface ApiService {
 
     @GET(PATH_MATCH)
     suspend fun getMatchByTournamentId(
-        @Query(QUERY_FILTER_TOURNAMENT_ID) matchId: Int
+        @Query(QUERY_FILTER_TOURNAMENT_ID) matchId: Int,
+        @Query(QUERY_SEARCH_PER_PAGE) perPage: Int = PER_PAGE_100
     ): List<Match>
 
     @GET(PATH_TEAM)
